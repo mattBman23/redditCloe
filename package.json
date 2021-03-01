@@ -1,0 +1,39 @@
+{
+  "name": "redditClone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "start": "ts-node src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattBman23/redditClone.git"
+  },
+  "keywords": [],
+  "author": "Matthew Budiman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattBman23/redditClone/issues"
+  },
+  "homepage": "https://github.com/mattBman23/redditClone#readme",
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/express": "^4.17.11",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^14.14.31",
+    "morgan": "^1.10.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.2"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
+    "express": "^4.17.1",
+    "pg": "^8.4.0",
+    "reflect-metadata": "^0.1.10",
+    "typeorm": "0.2.31"
+  }
+}
