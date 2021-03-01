@@ -1,8 +1,27 @@
-POST http://localhost:5050/api/auth/register
+### Variables
+@authUrl = http://localhost:{{$dotenv PORT}}/api/auth 
+
+### Register user
+POST {{authUrl}}/register
 Content-Type: application/json
 
 {
     "email":"userC@test.com",
     "username":"userC",
-    "password":"  password"
+    "password":"password"
 }
+
+### Login user
+POST {{authUrl}}/login
+Content-Type: application/json
+
+{
+    "username":"userA",
+    "password":"password"
+}
+
+### Authentication
+GET {{authUrl}}/me 
+ 
+### Logout
+GET {{authUrl}}/logout 

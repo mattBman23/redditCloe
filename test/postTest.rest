@@ -1,0 +1,11 @@
+### Variables
+@postUrl = http://localhost:{{$dotenv PORT}}/api/post 
+
+POST {{postUrl}}
+Content-Type: application/json
+
+{
+    "title":"First flutter Post", 
+    "body":"I like pie", 
+    "sub":"flutter"
+}
