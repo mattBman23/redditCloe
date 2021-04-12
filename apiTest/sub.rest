@@ -1,0 +1,12 @@
+@baseurl = http://localhost:{{$dotenv PORT}}/api/subs
+
+### Create Sub
+POST {{baseurl}}
+Content-Type: application/json
+
+{
+    "name": "reactjs",
+    "title": "React JS",
+    "description": "ReactJS Community"
+}
+ 

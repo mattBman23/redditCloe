@@ -1,0 +1,27 @@
+@baseurl = http://localhost:{{$dotenv PORT}}/api/posts
+
+### Get all post
+GET {{baseurl}}
+
+### Get post by identifier and slug
+GET {{baseurl}}/tHCUj5K/second_post
+
+
+### Create post
+POST {{baseurl}}
+Content-Type: application/json
+
+{
+    "title": "Third post",
+    "body": "Third post about reactjs",
+    "sub": "reactjs"
+} 
+
+### Create comment
+POST {{baseurl}}/3GmxwmC/third_post/comments
+Content-Type: application/json
+
+{
+    "body": "nice third post" 
+} 
+ 

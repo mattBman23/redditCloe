@@ -1,14 +1,14 @@
 import { Request, Response, Router } from 'express';
 import { isEmpty } from 'class-validator';
-import { getRepository } from 'typeorm';
 
-import { User } from '../entities/User';
-import { Sub } from '../entities/Sub';
+import User from '../entities/User';
 import auth from '../middleware/auth';
-
-const router = Router();
+import { getRepository } from 'typeorm';
+import Sub from '../entities/Sub';
+import user from '../middleware/user';
 
 const createSub = async (req: Request, res: Response) => {
+  console.log(1231);
   const { name, title, description } = req.body;
 
   const user: User = res.locals.user;
@@ -21,10 +21,10 @@ const createSub = async (req: Request, res: Response) => {
 
     const sub = await getRepository(Sub)
       .createQueryBuilder('sub')
-      .where('lower(sub.name) = :name', { name: name.toLowerCase() })
+      .where('lower(sub.name )= :name', { name: name.toLowerCase() })
       .getOne();
 
-    if (sub) errors.name = 'Sub exists already';
+    if (sub) errors.name = 'Sub already exist';
 
     if (Object.keys(errors).length > 0) {
       throw errors;
@@ -36,14 +36,14 @@ const createSub = async (req: Request, res: Response) => {
   try {
     const sub = new Sub({ name, description, title, user });
     await sub.save();
-
     return res.json(sub);
   } catch (err) {
-    console.log(err);
-    return res.status(500).json(err);
+    return res.status(500).json({ error: err });
   }
 };
 
-router.post('/', auth, createSub);
+const router = Router();
+
+router.post('/', user, auth, createSub);
 
 export default router;

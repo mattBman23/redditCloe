@@ -1,0 +1,11 @@
+@baseurl = http://localhost:{{$dotenv PORT}}/api/misc
+
+### Add vote
+POST {{baseurl}}/vote
+Content-Type: application/json
+
+{
+    "identifier": "tHCUj5K",
+    "slug": "second_post",  
+    "value": -1
+}

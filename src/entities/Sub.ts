@@ -7,13 +7,12 @@ import {
   OneToMany,
 } from 'typeorm';
 
-import { makeId, slugify } from '../util/helpers';
 import Entity from './Entity';
-import { Post } from './Post';
-import { User } from './User';
+import User from './User';
+import Post from './Post';
 
 @TOEntity('subs')
-export class Sub extends Entity {
+export default class Sub extends Entity {
   constructor(sub: Partial<Sub>) {
     super();
     Object.assign(this, sub);

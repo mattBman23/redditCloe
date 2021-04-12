@@ -1,0 +1,26 @@
+@baseurl = http://localhost:{{$dotenv PORT}}/api/auth
+
+### Register User
+POST {{baseurl}}/register
+Content-Type: application/json
+
+{
+    "email": "gen@gmail.com",
+    "username": "gen",
+    "password": "123456"
+}
+
+### Login user
+POST {{baseurl}}/login
+Content-Type: application/json
+
+{
+    "username": "gen",
+    "password": "123456"
+}
+
+### Logout user
+GET {{baseurl}}/logout 
+
+### Test authentication
+GET {{baseurl}}/me
