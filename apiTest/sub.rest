@@ -1,5 +1,8 @@
 @baseurl = http://localhost:{{$dotenv PORT}}/api/subs
 
+### Get Sub
+GET {{baseurl}}/reactjs
+
 ### Create Sub
 POST {{baseurl}}
 Content-Type: application/json

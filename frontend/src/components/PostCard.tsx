@@ -81,16 +81,15 @@ export const PostCard = ({
       <div className="w-full p-2">
         <div className="flex items-center">
           <Link href={`/r/${subName}`}>
-            <Fragment>
-              <img
-                src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
-                className="w-6 h-6 mr-1 rounded-full cursor-pointer"
-              />
-
-              <a className="text-xs font-bold cursor-pointer hover:underline">
-                /r/{subName}
-              </a>
-            </Fragment>
+            <img
+              src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+              className="w-6 h-6 mr-1 rounded-full cursor-pointer"
+            />
+          </Link>
+          <Link href={`/r/${subName}`}>
+            <a className="text-xs font-bold cursor-pointer hover:underline">
+              /r/{subName}
+            </a>
           </Link>
           <p className="text-gray-600 text xs">
             <span className="mx-1">•</span>
